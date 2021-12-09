@@ -15,7 +15,18 @@ module.exports = cds.service.impl(srv => {
         let kittemsAmount = await cds.run(kittensAmountQuery);
 
         let catAmount = catPrice[0].price + kittemsAmount[0]["sum ( price )"];
+
+        //                          or
+
+        // let query = `select sum(pet_shop_db_Kitten.price), psdC.price
+        // from pet_shop_db_Kitten join pet_shop_db_Cat psdC
+        //     on pet_shop_db_Kitten.parent_Id = psdC.Id
+        // where parent_Id = ${req.data.cat_Id};`
+        // let amountObj = await cds.run(query);
+        // let catAmount = (amountObj[0]['sum(pet_shop_db_Kitten.price)'] + amountObj[0].price);
+
         return req.data.amount = catAmount;
+
     });
 
     srv.after('CREATE', 'ShelterCases', (req) => {
