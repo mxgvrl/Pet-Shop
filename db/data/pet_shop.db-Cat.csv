@@ -1,5 +1,6 @@
-Id;name;price;kittens
-1;Tom;10.50;[{"price": 3.50}, {"price": 2.50}]
-2;Mary;6;[]
-3;Holy;19;[{"price":6.7}, {"price": 2.5}, {"price": 3}]
-4;Jane;4;[{"price":1.7}, {"price": 5}, {"price": 0.3}, {"price": 3}]
+Id;name;price
+1;Tom;10.50
+2;Mary;6
+3;Holy;19
+4;Jane;4
+5;Sara;3

@@ -5,9 +5,13 @@ entity Cat {
     key Id: Integer;
     name: String(100);
     price: Decimal(5, 2);
-    kittens: array of {
-        price: Decimal(5, 2);
-    }
+    kittens: Composition of many Kitten on kittens.parent = $self;
+}
+
+entity Kitten {
+    key Id: Integer;
+    price: Decimal(5, 2);
+    parent: Association to one Cat;
 }
 
 entity ShelterCases {
