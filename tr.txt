@@ -1,0 +1,62 @@
+srv.after('CREATE', 'ShelterCases', async (req) => {
+        const cats = req.shelterCaseItems
+        console.log(book)
+        
+        // for(let a of book) {
+        //     DELETE (Cat, a.cat_Id)
+        // }
+        
+
+        cds.transaction(req) .run (() => cats.map (item =>
+            DELETE (Cat).where({Id:item.cat_Id})));
+
+
+       // n > 0 || req.error (409,`${quantity} exceeds stock for book #${book}`)
+
+    })
+        // let tx = cds.tx(req);
+
+        // for(let item of req.shelterCaseItems) {
+        //     tx.run(DELETE.from(Cat).where({Id:item.cat_Id}))
+        //     .then(async () => { await tx.commit() })
+        //     .catch((e) => { console.log(e) });
+        // }
+    // });
+
+    async function _reduceStock (req) {
+        //console.log(req)
+        // const re = Object.assign({}, {...req.shelterCaseItems})
+    
+        // Object.keys(re).map(function(key, index) {
+        //     console.log(re[key]);
+        // });
+        // console.log(req.shelterCaseItems)
+
+        //console.log(re)
+        console.log(req.shelterCaseItems)
+        cds.tx(req) .run (() => {
+            req.shelterCaseItems.map (item => 
+            console.log(item)
+        
+            // UPDATE(Cat)
+            //   .set('name=', '')
+            //   .where (`Id in (select Id from pet_shop_db_Cat where Id = ${item.cat_Id})`)
+      
+        
+      )})
+
+      this.on ('submitOrder', async req => {
+        const {book,quantity} = req.data
+        const n = await UPDATE (Books, book)
+          .with ({ stock: {'-=': quantity }})
+          .where ({ stock: {'>=': quantity }})
+        n > 0 || req.error (409,`${quantity} exceeds stock for book #${book}`)
+      })
+        // .then (all => all.forEach ((affectedRows,i) => {
+        //   if (affectedRows === 0) {
+        //     req.error (409, `pizdec tebya zabullili`)
+        //   }
+        // }))
+        }
+     
+})

@@ -16,6 +16,13 @@ entity Kitten {
 
 entity ShelterCases {
     key Id: Integer;
-    cat: Association to one Cat;
     amount: Decimal(5, 2);
+    shelterCaseItems: Composition of many ShelterCaseItems on shelterCaseItems.caseId = $self;
 }
+
+entity ShelterCaseItems {
+    key Id: Integer;
+    key caseId: Association to ShelterCases;
+    cat: Association to Cat;
+}
+
