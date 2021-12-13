@@ -1,6 +1,6 @@
-Id;name;price
-1;Tom;10.50
-2;Mary;6
-3;Holy;19
-4;Jane;4
-5;Sara;3
+Id;name;price;breed
+1;Tom;10.50;Sphynx
+2;Mary;6;Siamese
+3;Holy;19;British Shorthair
+4;Jane;4;Sphynx
+5;Sara;3;Without breed

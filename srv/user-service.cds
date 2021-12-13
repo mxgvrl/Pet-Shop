@@ -9,8 +9,7 @@ service UserService @(path: '/catalog') {
 
 }
 
-annotate UserService.ShelterCaseItems with @odata.draft.enabled;
-annotate UserService.Cat with @odata.draft.enabled;
+//annotate UserService.ShelterCaseItems with @odata.draft.enabled;
 
 
 // extend service UserService with {

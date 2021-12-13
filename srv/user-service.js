@@ -1,4 +1,3 @@
-// const { tx } = require('@sap/cds');
 const cds = require('@sap/cds')
 const { Cat, Kitten, ShelterCases } = cds.entities
 
@@ -33,7 +32,5 @@ module.exports = cds.service.impl(srv => {
         // cds.transaction(req) .run (() => cats.map (item =>
         //     DELETE (Cat).where({Id:item.cat_Id})));
     });
-
-    
      
 })
